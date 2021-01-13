@@ -2,7 +2,7 @@ import crypto from "crypto";
 
 import { WA_SERVER, SIG_SALT, APPID } from "./config";
 
-function md5(str: string) {
+export function md5(str: string) {
 	return crypto.createHash("md5").update(str).digest("hex").toUpperCase();
 }
 
@@ -19,7 +19,7 @@ export function encodeData(s: string) {
 		.replace(/\)/g, "%29");
 }
 
-function decodeData(s: string) {
+export function decodeData(s: string) {
 	try {
 		return decodeURIComponent(
 			s
@@ -37,7 +37,7 @@ function decodeData(s: string) {
 	return "";
 }
 
-function calcSig(query: string) {
+export function calcSig(query: string) {
 	let params = query
 		.split("&")
 		.map((x) => x.split("="))
