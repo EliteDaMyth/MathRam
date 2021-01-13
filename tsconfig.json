@@ -1,0 +1,15 @@
+{
+    "display": "Node",
+    "include": ["src/**/*"],
+    "compilerOptions": {
+      "lib": ["es2020"],
+      "module": "commonjs",
+      "target": "es2020", 
+      "outDir": "out/",
+   
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true
+    }  
+  }
