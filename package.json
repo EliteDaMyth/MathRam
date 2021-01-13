@@ -7,7 +7,7 @@
 	"scripts": {
 		"test": "mocha -r ts-node/register 'tests/**/*.ts' --timeout 30000",
 		"build": "tsc",
-		"docs": "typedoc --out docs ./src/ --theme ./node_modules/typedoc-dark-theme/bin/default/"
+		"docs": "typedoc --out docs ./src/ --theme ./docstheme/default/"
 	},
 	"author": "EliteDaMyth",
 	"license": "ISC",
@@ -25,7 +25,6 @@
 		"chai": "^4.2.0",
 		"mocha": "^8.2.1",
 		"ts-node": "^9.1.1",
-		"typedoc-dark-theme": "0.0.11",
 		"typescript": "^4.1.3"
 	}
 }
