@@ -2,11 +2,10 @@ import fetch from "node-fetch";
 import { encodeData, craftURL } from "./helper";
 import type { Answer } from "./answerType";
 
-async function query(q: string): Promise<Answer> {
+export async function query(q: string): Promise<Answer> {
 	let url = craftURL(
 		`input=${encodeData(q)}&podstate=Step-by-step%20solution&output=json`
 	);
-	console.log(url);
 	const e = await fetch(url);
 	return await e.json();
 }

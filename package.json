@@ -1,19 +1,20 @@
 {
-  "name": "math-ram",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node-fetch": "^2.5.7",
-    "node-fetch": "^2.6.1"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.20",
-    "typewiz-core": "^1.2.4"
-  }
+	"name": "mathram",
+	"version": "1.0.0",
+	"description": "Module to utilise the Wolfram Alpha API, for free!",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc"
+	},
+	"author": "EliteDaMyth",
+	"license": "ISC",
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.20",
+		"@types/node-fetch": "^2.5.7"
+	}
 }
