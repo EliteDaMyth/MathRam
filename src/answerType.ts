@@ -1,3 +1,9 @@
+/**
+ * Main Interface for Answer
+ *
+ * @export
+ * @interface Answer
+ */
 export interface Answer {
 	queryresult: Queryresult;
 }

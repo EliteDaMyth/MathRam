@@ -2,11 +2,25 @@ import crypto from "crypto";
 
 import { WA_SERVER, SIG_SALT, APPID } from "./config";
 
-export function md5(str: string) {
+/**
+ * Return the MD5 hash of the given string.
+ *
+ * @export
+ * @param {string} str
+ * @return {string}
+ */
+export function md5(str: string): string {
 	return crypto.createHash("md5").update(str).digest("hex").toUpperCase();
 }
 
-export function encodeData(s: string) {
+/**
+ * Encode the Data so it can be passed in the URL
+ *
+ * @export
+ * @param {string} s
+ * @return {string}
+ */
+export function encodeData(s: string): string {
 	return encodeURIComponent(s)
 		.replace(/-/g, "%2D")
 		.replace(/_/g, "%5F")
@@ -19,7 +33,14 @@ export function encodeData(s: string) {
 		.replace(/\)/g, "%29");
 }
 
-export function decodeData(s: string) {
+/**
+ * Decode the Data from URL Encoded to normal text.
+ *
+ * @export
+ * @param {string} s
+ * @return {string}
+ */
+export function decodeData(s: string): string {
 	try {
 		return decodeURIComponent(
 			s
@@ -37,7 +58,14 @@ export function decodeData(s: string) {
 	return "";
 }
 
-export function calcSig(query: string) {
+/**
+ * Calculate the signature for the query with the formula sig value(md5(salt + concatenated_query)) with pre-known salt
+ *
+ * @export
+ * @param {string} query
+ * @return {string}
+ */
+export function calcSig(query: string): string {
 	let params = query
 		.split("&")
 		.map((x) => x.split("="))
@@ -48,7 +76,14 @@ export function calcSig(query: string) {
 	return md5(s);
 }
 
-export function craftURL(query: string) {
+/**
+ * Craft the URL when given the Query.
+ *
+ * @export
+ * @param {string} query
+ * @return {string}
+ */
+export function craftURL(query: string): string {
 	let _query = new Map([["appid", APPID]]);
 	query
 		.split("&")
