@@ -34,9 +34,9 @@ export interface Pod {
 	position: number;
 	error: boolean;
 	numsubpods: number;
-	primary?: boolean;
 	subpods: Subpod[];
 	expressiontypes: Expressiontype[] | Expressiontype;
+	primary?: boolean;
 	states?: PodState[];
 	infos?: Infos;
 }
@@ -71,12 +71,12 @@ export interface Link {
 }
 
 export interface PodState {
+	name?: string;
+	input?: string;
 	count?: number;
 	value?: string;
 	delimiters?: string;
 	states?: StateState[];
-	name?: string;
-	input?: string;
 }
 
 export interface StateState {
@@ -88,6 +88,23 @@ export interface Subpod {
 	title: string;
 	img: SubpodImg;
 	plaintext: string;
+	mathml: string;
+	imagemap?: Imagemap;
+}
+
+export interface Imagemap {
+	rect: Rect;
+}
+
+export interface Rect {
+	left: number;
+	top: number;
+	right: number;
+	bottom: number;
+	query?: string;
+	assumptions?: string;
+	title: string;
+	type: string;
 }
 
 export interface SubpodImg {
